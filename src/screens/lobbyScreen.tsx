@@ -31,9 +31,10 @@ const LobbyScreen = () => {
     }
   }, [socket])
   return (
-    <div>
-      <h1>Lobby</h1>
+    <div className="dashboard">
+      <h1>Memories</h1>
       <form onSubmit={handleSubmit}>
+        <div className="inputContainer">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -41,7 +42,9 @@ const LobbyScreen = () => {
           value={email}
           onChange={(event) => setEmail(event?.target?.value)}
         />
-        <br />
+        </div>
+       
+        <div className="inputContainer">
         <label htmlFor="room">Room Number</label>
         <input
           type="room"
@@ -49,8 +52,11 @@ const LobbyScreen = () => {
           value={room}
           onChange={(event) => setRoom(event?.target?.value)}
         />
-        <br />
+        </div>
+        <div >
         <button>Join</button>
+        </div>
+        
       </form>
     </div>
   );
